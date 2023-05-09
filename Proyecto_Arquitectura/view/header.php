@@ -19,6 +19,28 @@
         <link href="../public/css/icons.css" rel="stylesheet">
         <link href="../public/css/menu.css" rel="stylesheet" type="text/css">
         <link href="../public/css/style.css" rel="stylesheet">
+
+        
+        <!-- DataTables -->
+        <link href="../public/libs/datatables/dataTables.min.css" rel="stylesheet" type="text/css" />
+        
+        <!-- Custom Css -->
+        <link href="../public/css/custom.css" rel="stylesheet" type="text/css" />
+
+        <link href="../public/css/main.css" rel="stylesheet"
+    type="text/css" />
+        <style type="text/css">
+            .mayusculas{
+                text-transform:uppercase;
+            }	
+            textarea {
+                resize: none;
+            }
+        </style>
+
+
+
+
     </head>
 
     <body class="sticky-header">
@@ -48,7 +70,7 @@
                         <li class="menu-list"><a href=""><i class="mdi mdi-buffer"></i> <span>Artículos</span></a>
                             <ul class="child-list">
                                 <li><a href="articulo.php">Artículos</a></li>
-                                <li><a href="ui-buttons.html">Categorias </a></li>
+                                <li><a href="categoria.php">Categorias </a></li>
                             </ul>
                         </li>
 

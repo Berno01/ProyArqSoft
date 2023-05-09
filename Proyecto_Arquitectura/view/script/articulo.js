@@ -2,8 +2,8 @@ var tabla;
 
 function init(){
     //Para validación
-	$('#nombre').validacion(' abcdefghijklmnñopqrstuvwxyzáéíóú0123456789/-*,.°()$#');
-    $('#descripcion').validacion(' abcdefghijklmnñopqrstuvwxyzáéíóú0123456789/-*,.°()$#');
+	
+	$('#nombre_articulo').validacion(' abcdefghijklmnñopqrstuvwxyzáéíóú0123456789/-*,.°()$#');
     $('#articulo').select2();
 
 	mostrarform(false);
@@ -12,7 +12,7 @@ function init(){
 	{
 		guardaryeditar(e);	
 	});
-    $("#imagenmuestra").hide();
+    
     $.post("../ajax/categoria.php?op=5", function(r){
 	    $("#categoria").html(r);
 		$('#categoria').trigger('change.select2');
@@ -22,11 +22,11 @@ function init(){
 //Función limpiar
 function limpiar()
 {
-	$("#nombre").val("");
+	$("#nombre_articulo").val("");
     $("#descripcion").val("");
     $("#stock").val("0");
     $("#codigo").val("0");
-	$("#idarticulo").val("");
+	$("#id_articulo").val("");
     $("#imagenmuestra").attr("src","");
     $.post("../ajax/categoria.php?op=5", function(r){
 	    $("#categoria").html(r);
@@ -107,7 +107,8 @@ function guardaryeditar(e)
 	    processData: false,
 
 	    success: function(datos)
-	    {    
+	    {   
+			window.alert(datos);
 			mensaje=datos.split(":");
 			if(mensaje[0]=="1"){               
 			swal.fire(
@@ -124,7 +125,7 @@ function guardaryeditar(e)
 					type: 'error',
 					title: 'Error',
 					text: mensaje[1],
-					footer: 'Verifique la información de Registro, en especial que la información no fué ingresada previamente a la Base de Datos.'
+					footer: 'Verifique la información de Registro, en especial que la información no fué ingresada previamente a la Base de Datos. klk'
 				});
 			}
 	    }
@@ -187,7 +188,7 @@ function desactivar(idarticulo)
 							type: 'error',
 							title: 'Error',
 							text: mensaje[1],
-							footer: 'Verifique la información de Registro, en especial que la información no fué ingresada previamente a la Base de Datos.'
+							footer: 'Verifique la información de Registro, en especial que la información no fué ingresada previamente a la Base de Datos. lk2'
 						});
 					}			
         	});	
@@ -224,7 +225,7 @@ function activar(idarticulo)
 							type: 'error',
 							title: 'Error',
 							text: mensaje[1],
-							footer: 'Verifique la información de Registro, en especial que la información no fué ingresada previamente a la Base de Datos.'
+							footer: 'Verifique la información de Registro, en especial que la información no fué ingresada previamente a la Base de Datos. lklk3'
 						});
 					}			
         	});	

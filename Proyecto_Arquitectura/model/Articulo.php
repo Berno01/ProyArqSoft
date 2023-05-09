@@ -3,7 +3,7 @@ require_once "../config/Conexion.php";
 
 
 
-Class Articulo implements Prototype
+Class Articulo 
 {
 
 	//Implementamos nuestro constructor
@@ -16,7 +16,7 @@ Class Articulo implements Prototype
 	//Implementar un método para listar los registros
 	public function listar()
 	{
-		$sql="SELECT a.id_articulo, a.nombre_articulo, c.categoria_nombre
+		$sql="SELECT a.id_articulo, a.nombre_articulo, c.nombre_categoria
         FROM articulo a, categoria c
         WHERE(a.id_categoria=c.id_categoria);";
 		return ejecutarConsulta($sql);		
@@ -25,10 +25,10 @@ Class Articulo implements Prototype
 	//Implementamos un método para insertar registros
 	public function insertar($nombre, $categoria)
 	{
-		//$validacion=$this->comprueba_duplicados($codigo,0);
+		$validacion=$this->comprueba_duplicados($nombre, $categoria);
 		if($validacion==0){
 			$sql="INSERT INTO articulo(nombre_articulo, id_categoria)
-            VALUES ('$nombre', '$categoria');";
+            VALUES ('".$nombre."', ".$categoria.");";
 			return ejecutarConsulta($sql);
 		}
 		else{return 0;}
@@ -50,9 +50,9 @@ Class Articulo implements Prototype
 	//Implementar un método para mostrar los datos de un registro a modificar
 	public function mostrar($idarticulo)
 	{
-		$sql="SELECT a.id_articulo, a.articulo_nombre, c.id_categoria
+		$sql="SELECT a.id_articulo, a.nombre_articulo, c.id_categoria
         FROM articulo a, categoria c
-        WHERE(a.id_categoria=c.id_categoria) AND (id_articulo='$idarticulo')";
+        WHERE(a.id_categoria=c.id_categoria) AND (id_articulo=".$idarticulo.")";
 		return ejecutarConsultaSimpleFila($sql);
 	}
 
@@ -62,16 +62,18 @@ Class Articulo implements Prototype
 		ORDER BY nombre_articulo ASC";
 		return ejecutarConsulta($sql);		
 	}
-	/*
+	
 	//Implementar un método para listar los registros
-	public function comprueba_duplicados($codigo,$id)
+	public function comprueba_duplicados($nombre, $categoria)
 	{
 		$resultado=0;
-		$sql="SELECT COUNT(idarticulo) AS idarticulo FROM articulo WHERE (articulocodigo='$codigo') AND (idarticulo<>$id)";
+		$sql="SELECT COUNT(id_articulo) 
+		AS id_articulo FROM articulo WHERE (id_categoria= ".$categoria.")and
+		(nombre_articulo='".$nombre."')";
 		$resultado = ejecutarConsultaSimpleFila($sql);
-		return $resultado['idarticulo'];		
+		return $resultado['id_articulo'];		
 	}
-
+/*
 	//Implementar un método para listar los registros activos
 	public function listarActivos()
 	{

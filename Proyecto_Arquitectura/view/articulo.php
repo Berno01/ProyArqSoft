@@ -71,8 +71,8 @@ require 'header.php';
                                                     <div class="row mb-3">
                                                         <label for="example-text-input" class="col-sm-2 col-form-label">Nombre</label>
                                                         <div class="col-sm-10">
-                                                            <input type="hidden" name="idarticulo" id="idarticulo">
-                                                            <input class="form-control mayusculas" type="text" placeholder="Nombre" maxlength="100" id="nombre" name="nombre" required>
+                                                            <input type="hidden" name="id_articulo" id="id_articulo">
+                                                            <input class="form-control mayusculas" type="text" placeholder="Nombre" maxlength="100" id="nombre_articulo" name="nombre_articulo" required>
                                                         </div>
                                                     </div> 
                                                 </div>

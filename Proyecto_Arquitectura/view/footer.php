@@ -168,6 +168,45 @@
         <script src="../public/js/jquery.slimscroll.min.js"></script>
         <script src="../public/js/slidebars.min.js"></script>
 
+
+        <!-- JAVASCRIPT -->
+        <script src="../public/libs/jquery/jquery.min.js"></script>
+        <script src="../public/libs/select2/js/select2.min.js"></script>
+        <script src="../public/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="../public/libs/metismenu/metisMenu.min.js"></script>
+        <script src="../public/libs/simplebar/simplebar.min.js"></script>
+        <script src="../public/libs/node-waves/waves.min.js"></script>
+        <script src="../public/libs/feather-icons/feather.min.js"></script>
+
+        
+        <!-- Required datatable js -->
+        <script src="../public/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="../public/libs/datatables/datatables.min.js"></script>
+        
+
+        <!-- Responsive examples -->
+        <script src="../public/libs/datatables/Responsive-2.4.0/js/dataTables.responsive.min.js"></script>
+        <script src="../public/libs/datatables/Responsive-2.4.0/js/responsive.bootstrap5.min.js"></script>
+
+        <!-- Sweet Alerts js -->
+        <script src="../public/libs/sweetalert2/sweetalert2.min.js"></script>
+
+        <!-- pace js -->
+        <script src="../public/libs/pace-js/pace.min.js"></script>
+
+        <script
+    src="https://maps.google.com/maps/api/js?key=AIzaSyCtSAR45TFgZjOs4nBFFZnII-6mMHLfSYI"></script>
+
+        
+        <script src="../public/js/app.js"></script>
+
+        <!--<script src="../public/js/ajax.js"></script>-->
+        <script src="../public/js/validacion.js"></script>
+        
+        <script src="../view/script/notificacion.js"></script>
+
+
+
         <!--plugins js-->
         <script src="../public/plugins/counter/jquery.counterup.min.js"></script>
         <script src="../public/plugins/waypoints/jquery.waypoints.min.js"></script>
