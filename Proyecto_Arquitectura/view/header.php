@@ -74,10 +74,19 @@
                             </ul>
                         </li>
 
-                        <li class="menu-list"><a href=""><i class="mdi mdi-buffer"></i> <span>Proveedores</span></a>
+                        <li class="menu">
+                            <a href="proveedor.php"><i class="mdi mdi-gauge"></i> <span>Proveedores</span></a>
+                        </li>
+
+                        <li class="menu-list"><a href=""><i class="mdi mdi-buffer"></i> <span>Almacenes</span></a>
                             <ul class="child-list">
-                                <li><a href="proveedor.php">Ver Proveedores</a></li>
+                                <li><a href="proveedor.php">Ver Almacenes</a></li>
+                                <li><a href="proveedor.php">Ver Oficinas</a></li>
+                                
                             </ul>
+                        </li>
+                        <li class="menu">
+                            <a href="escritorio.php"><i class="mdi mdi-gauge"></i> <span>Personal</span></a>
                         </li>
                         <li>
 
@@ -89,11 +98,8 @@
                             <h3 class="navigation-title">Herramientas para Personal</h3>
                         </li>
 
-                        <li class="menu-list"><a href=""><i class="mdi mdi-diamond"></i> <span>Pedir</span></a>
-                            <ul class="child-list">
-                                <li><a href="icons-material.html">Realizar pedido</a></li>
-                                <li><a href="icons-font-awesome.html">Ver pedidos pendientes</a></li>
-                            </ul>
+                        <li class="menu">
+                            <a href="escritorio.php"><i class="mdi mdi-gauge"></i> <span>Pedidos</span></a>
                         </li>
                     </ul><!--sidebar nav end-->
                 </div>
