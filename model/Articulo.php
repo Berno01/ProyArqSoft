@@ -48,11 +48,11 @@ Class Articulo
 
     
 	//Implementar un método para mostrar los datos de un registro a modificar
-	public function mostrar($idarticulo)
+	public function mostrar($id_articulo)
 	{
 		$sql="SELECT a.id_articulo, a.nombre_articulo, c.id_categoria
         FROM articulo a, categoria c
-        WHERE(a.id_categoria=c.id_categoria) AND (id_articulo=".$idarticulo.")";
+        WHERE(a.id_categoria=c.id_categoria) AND (id_articulo=".$id_articulo.")";
 		return ejecutarConsultaSimpleFila($sql);
 	}
 

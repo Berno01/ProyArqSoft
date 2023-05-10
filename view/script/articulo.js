@@ -134,28 +134,20 @@ function guardaryeditar(e)
 	limpiar();
 }
 
-function mostrar(idarticulo)
+function mostrar(id_articulo)
 {
-	$.post("../ajax/articulo.php?op=4",{idarticulo : idarticulo}, function(data, status)
+	$.post("../ajax/articulo.php?op=4",{id_articulo : id_articulo}, function(data, status)
 	{
 		data = JSON.parse(data);		
 		mostrarform(true);
 
-		$("#nombre").val(data.articulonombre);
-        $("#descripcion").val(data.articulodescripcion);
-        $("#stock").val(data.articulostock);
-        $("#codigo").val(data.articulocodigo);
-        $.post("../ajax/categoria.php?op=5", function(r){
+		$("#nombre_articulo").val(data.nombre_articulo);
+       $.post("../ajax/categoria.php?op=5", function(r){
             $("#categoria").html(r);
-            $('select[name=categoria]').val(data.idcategoria);
+            $('select[name=categoria]').val(data.id_categoria);
             $('#categoria').trigger('change.select2');
         });
-
-        $("#imagenmuestra").show();
-		$("#imagenmuestra").attr("src","../file/articulos/"+data.articuloimagen);
-		$("#imagenactual").val(data.articuloimagen);
-
- 		$("#idarticulo").val(data.idarticulo);
+ 		$("#id_articulo").val(data.id_articulo);
  	});
 }
 

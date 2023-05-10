@@ -1,6 +1,6 @@
                 <!--footer section start-->
                 <footer class="footer">
-                    2023 &copy; UCB-Grupo 1.
+                    2023 &copy; UCB - Grupo 1.
                 </footer>
                 <!--footer section end-->
 

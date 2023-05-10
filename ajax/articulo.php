@@ -77,7 +77,7 @@ switch ($_GET["op"]){
 	break; */
 
 	case '4':
-		$rspta=$articulo->mostrar($idarticulo);
+		$rspta=$articulo->mostrar($id_articulo);
  		//Codificar el resultado utilizando json
  		echo json_encode($rspta);
 	break;
