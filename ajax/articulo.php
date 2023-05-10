@@ -17,9 +17,9 @@ switch ($_GET["op"]){
 
  		while ($reg = pg_fetch_assoc($rspta)){			
 			$data[]=array(
-				"0"=>('<button class="btn btn-warning" onclick="mostrar('.$reg['id_articulo'].')"><i class="bx bx-pencil"></i></button>'.
+				"0"=>('<button class="btn btn-warning" onclick="mostrar('.$reg['id_articulo'].')"><i class="mdi mdi-border-color"></i></button>'.
 				'<button class="btn btn-info" onclick="reporte_detalle('.$reg['id_articulo'].')"><i class="fa fa-print"></i></button>'.
-				'<button class="btn btn-primary" onclick="activar('.$reg['id_articulo'].')"><i class="bx bxs-check-square"></i></button>'),
+				'<button class="btn btn-primary" onclick="activar('.$reg['id_articulo'].')"><i class="mdi mdi-cup-off"></i></button>'),
 				/*$reg['articulocondicion'])?'<button class="btn btn-warning" onclick="mostrar('.$reg['id_articulo'].')"><i class="bx bx-pencil"></i></button>'.
 					'<button class="btn btn-info" onclick="reporte_detalle('.$reg['id_articulo'].')"><i class="fa fa-print"></i></button>'.
 					'<button class="btn btn-danger" onclick="desactivar('.$reg['id_articulo'].')"><i class="bx bx-trash"></i></button>':

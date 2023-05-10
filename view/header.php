@@ -7,10 +7,12 @@
         <meta name="author" content="Mannat Themes">
         <meta name="keyword" content="">
 
-        <title>SYNTRA | Responsive Web App Kit</title>
+        <title>UCB - Gestion de Inventario</title>
 
         <!-- Theme icon -->
-        <link rel="shortcut icon" href="../public/images/favicon.ico">
+        
+        <link rel="shortcut icon" href="https://www.ucb.edu.bo/wp-content/uploads/2020/09/logo-UCB.png">
+
 
         <link href="../public/plugins/morris-chart/morris.css" rel="stylesheet">
         <!-- Theme Css -->
