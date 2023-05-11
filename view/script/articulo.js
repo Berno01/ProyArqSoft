@@ -152,7 +152,7 @@ function mostrar(id_articulo)
 }
 
 //Función para desactivar registros
-function desactivar(idarticulo)
+function desactivar(id_articulo)
 {
 	swal.fire({
 		title: 'Mensaje de Confirmación',
@@ -165,7 +165,7 @@ function desactivar(idarticulo)
 		confirmButtonText: 'Desactivar'
 	}).then((result) => {
 		if (result.value) {
-			$.post("../ajax/articulo.php?op=2", {idarticulo : idarticulo}, function(e){
+			$.post("../ajax/articulo.php?op=2", {id_articulo : id_articulo}, function(e){
 				mensaje=e.split(":");
 					if(mensaje[0]=="1"){  
 						swal.fire(
@@ -189,7 +189,7 @@ function desactivar(idarticulo)
 }
 
 //Función para activar registros
-function activar(idarticulo)
+function activar(id_articulo)
 {
 	swal.fire({
 		title: 'Mensaje de Confirmación',
@@ -202,7 +202,7 @@ function activar(idarticulo)
 		confirmButtonText: 'Activar'
 	}).then((result) => {
 		if (result.value) {
-			$.post("../ajax/articulo.php?op=3", {idarticulo : idarticulo}, function(e){
+			$.post("../ajax/articulo.php?op=3", {id_articulo : id_articulo}, function(e){
 				mensaje=e.split(":");
 					if(mensaje[0]=="1"){  
 						swal.fire(

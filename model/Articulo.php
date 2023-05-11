@@ -16,7 +16,7 @@ Class Articulo
 	//Implementar un método para listar los registros
 	public function listar()
 	{
-		$sql="SELECT a.id_articulo, a.nombre_articulo, c.nombre_categoria
+		$sql="SELECT a.id_articulo, a.nombre_articulo, c.nombre_categoria, a.estado_articulo
         FROM articulo a, categoria c
         WHERE(a.id_categoria=c.id_categoria);";
 		return ejecutarConsulta($sql);		
@@ -37,7 +37,7 @@ Class Articulo
 	//Implementamos un método para editar registros
 	public function editar($idarticulo,$nombre, $categoria)
 	{
-		//$validacion=$this->comprueba_duplicados($codigo,$idarticulo);
+		$validacion=$this->comprueba_duplicados($nombre,$categoria);
 		if($validacion==0){
 			$sql="UPDATE articulo SET nombre_articulo='$nombre', id_categoria='$categoria' 
 			WHERE id_articulo='$idarticulo'";
@@ -84,6 +84,21 @@ Class Articulo
     */
 	
 
+	//Implementamos un método para desactivar categorías
+	public function desactivar($idarticulo)
+	{
+		$sql="UPDATE articulo set estado_articulo = FALSE where id_articulo='$idarticulo'";
+		return ejecutarConsulta($sql);
+		
+
+	}
+
+	//Implementamos un método para activar categorías
+	public function activar($idarticulo)
+	{
+		$sql="UPDATE articulo set estado_articulo = TRUE where id_articulo='$idarticulo'";
+		return ejecutarConsulta($sql);
+	}
 	
 
 }

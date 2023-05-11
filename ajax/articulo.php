@@ -17,18 +17,13 @@ switch ($_GET["op"]){
 
  		while ($reg = pg_fetch_assoc($rspta)){			
 			$data[]=array(
-				"0"=>('<button class="btn btn-warning" onclick="mostrar('.$reg['id_articulo'].')"><i class="mdi mdi-border-color"></i></button>'.
-				'<button class="btn btn-info" onclick="reporte_detalle('.$reg['id_articulo'].')"><i class="fa fa-print"></i></button>'.
-				'<button class="btn btn-primary" onclick="activar('.$reg['id_articulo'].')"><i class="mdi mdi-cup-off"></i></button>'),
-				/*$reg['articulocondicion'])?'<button class="btn btn-warning" onclick="mostrar('.$reg['id_articulo'].')"><i class="bx bx-pencil"></i></button>'.
-					'<button class="btn btn-info" onclick="reporte_detalle('.$reg['id_articulo'].')"><i class="fa fa-print"></i></button>'.
-					'<button class="btn btn-danger" onclick="desactivar('.$reg['id_articulo'].')"><i class="bx bx-trash"></i></button>':
-					'<button class="btn btn-warning" onclick="mostrar('.$reg['id_articulo'].')"><i class="bx bx-pencil"></i></button>'.
-					'<button class="btn btn-info" onclick="reporte_detalle('.$reg['id_articulo'].')"><i class="fa fa-print"></i></button>'.
-					'<button class="btn btn-primary" onclick="activar('.$reg['id_articulo'].')"><i class="bx bxs-check-square"></i></button>',*/
+				"0"=>($reg['estado_articulo']=='t')?'<button class="btn btn-warning" onclick="mostrar('.$reg['id_articulo'].')"><i class="mdi mdi-border-color"></i></button>'.
+					'<button class="btn btn-danger" onclick="desactivar('.$reg['id_articulo'].')"><i class="mdi mdi-cup-off"></i></button>':
+					'<button class="btn btn-warning" onclick="mostrar('.$reg['id_articulo'].')"><i class="mdi mdi-border-color"></i></button>'.
+					'<button class="btn btn-primary" onclick="activar('.$reg['id_articulo'].')"><i class="mdi mdi-cup"></i></button>', //bx bxs-check-square
 				"1"=>$reg['nombre_articulo'],
                 "2"=>$reg['nombre_categoria'],
-                "3"=>$reg['id_articulo']
+                "3"=>$reg['id_articulo'] 
 				);
 		}
  		$results = array(
@@ -55,7 +50,6 @@ switch ($_GET["op"]){
 		}*/
 		if (empty($id_articulo)){
 			
-			echo '<script language="javascript">alert('.$nombre_articulo.');</script>';
 			$rspta=$articulo->insertar($nombre_articulo, $categoria);
 			echo $rspta ? "1:El Artículo fué registrado" : "0:El Artículo no fué registrado";
 		}
@@ -65,23 +59,23 @@ switch ($_GET["op"]){
 		}
 	break;
 
-	/*
+	
 	case '2':
-		$rspta=$articulo->desactivar($idarticulo);
+		$rspta=$articulo->desactivar($id_articulo);
  		echo $rspta ? "1:El Artículo fué Desactivado" : "0:El Artículo no fué Desactivado";
 	break; 
 
 	case '3':
-		$rspta=$articulo->activar($idarticulo);
+		$rspta=$articulo->activar($id_articulo);
  		echo $rspta ? "1:El Artículo fué Activado" : "0:El Artículo no fué Activado";
-	break; */
+	break; 
 
 	case '4':
 		$rspta=$articulo->mostrar($id_articulo);
  		//Codificar el resultado utilizando json
  		echo json_encode($rspta);
 	break;
-
+/*
 	case '5':
 		$rspta = $articulo->select();
 		while ($reg = pg_fetch_assoc($rspta))
