@@ -38,7 +38,6 @@ require 'header.php';
                                         <th>Opciones</th> 
                                         <th>Nombre</th>
                                         <th>Correo Electronico</th>
-                                   
                                     </tr>
                                 </thead>
                             </table>
