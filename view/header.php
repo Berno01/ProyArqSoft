@@ -83,7 +83,7 @@
                         <li class="menu-list"><a href=""><i class="mdi mdi-buffer"></i> <span>Almacenes</span></a>
                             <ul class="child-list">
                                 <li><a href="proveedor.php">Ver Almacenes</a></li>
-                                <li><a href="proveedor.php">Ver Oficinas</a></li>
+                                <li><a href="oficina.php">Ver Oficinas</a></li>
                                 
                             </ul>
                         </li>

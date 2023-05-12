@@ -10,7 +10,7 @@ define("DB_NAME", "inventario1");
 define("DB_USERNAME", "postgres");
 
 //Contraseña del usuario de la base de datos
-define("DB_PASSWORD", "123");
+define("DB_PASSWORD", "japon444");
 
 //definimos la codificación de los caracteres
 define("DB_ENCODE","utf8");

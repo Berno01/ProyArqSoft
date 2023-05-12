@@ -3,7 +3,7 @@
     $port = "5432";
     $dbname = "inventario1";
     $user = "postgres";
-    $password = "123";
+    $password = "japon444";
 
     $con = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password");
     if (!$con) {
