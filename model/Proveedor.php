@@ -20,7 +20,8 @@ class Proveedor
 	public function insertar($nombre, $correo)
 	{
 		
-		$sql = "INSERT INTO proveedor(nombre_proveedor, correo_electronico) VALUES ('$nombre', '$correo')";
+		$sql = "INSERT INTO proveedor(nombre_proveedor, correo_electronico) 
+		VALUES ('$nombre', '$correo')";
 		return ejecutarConsulta($sql);
 			
 		/*$validacion=$this->comprueba_duplicados($nombre, $correo);
