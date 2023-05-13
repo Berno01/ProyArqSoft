@@ -20,9 +20,8 @@ class Proveedor
 	public function insertar($nombre, $correo)
 	{
 		
-		$sql = "INSERT INTO proveedor(nombre_proveedor, correo_electronico)
-			VALUES ($nombre, $correo)";
-			return ejecutarConsulta($sql);
+		$sql = "INSERT INTO proveedor(nombre_proveedor, correo_electronico) VALUES ('$nombre', '$correo')";
+		return ejecutarConsulta($sql);
 			
 		/*$validacion=$this->comprueba_duplicados($nombre, $correo);
 		if($validacion == 0){
@@ -50,9 +49,9 @@ class Proveedor
 
 	public function mostrar($id_proveedor)
 	{
-		$sql = "SELECT p.id_proveedor, p.nombre_proveedor, p.correo_electronico, i.id_ingreso
-		FROM proveedor p, ingreso i
-		WHERE (p.id_proveedor = i.id_proveedor) AND (id_proveedor = '$idproveedor')";
+		$sql = "SELECT id_proveedor, nombre_proveedor, correo_electronico
+		FROM proveedor 
+		WHERE id_proveedor = $id_proveedor)";
 		return ejecutarConsultaSimpleFila($sql);
 	}
 
@@ -61,6 +60,12 @@ class Proveedor
 		$sql="SELECT id_proveedor, nombre_proveedor, correo_electronico
 		FROM proveedor
 		ORDER BY nombre_proveedor ASC";
+		return ejecutarConsulta($sql);
+	}
+
+	public function activar($idproveedor)
+	{
+		$sql="UPDATE proveedor set estado_proveedor = FALSE where id_proveedor'$idproveedor'";
 		return ejecutarConsulta($sql);
 	}
 }

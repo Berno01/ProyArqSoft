@@ -41,6 +41,7 @@ switch ($_GET["op"])
            
             $rspta = $proveedor->insertar($nombre_proveedor, $correo_electronico);
             echo $rspta ? "1:Proveedor registrado" : "0:No se pudieron registrar todos los datos del proveedor";
+			
         }
         else
         {
@@ -49,7 +50,7 @@ switch ($_GET["op"])
         }
     break;
 
-    /*case '2':
+    case '2':
 		$rspta=$proveedor->desactivar($id_proveedor);
  		echo $rspta ? "1:Proveedor Desactivado" : "0:proveedor no se puede desactivar";
 	break;
@@ -58,12 +59,13 @@ switch ($_GET["op"])
 		$rspta=$proveedor->activar($id_proveedor);
  		echo $rspta ? "1:Proveedor activado" : "0:proveedor no se puede activar";
 	break;
-    */
+    
     case '4':
 		$rspta=$proveedor->mostrar($id_proveedor);
  		echo json_encode($rspta);
 	break;
 
+	/*
     case '5':
 		$rspta = $proveedor->select();
 		while ($reg = pg_fetch_assoc($rspta))
@@ -71,7 +73,7 @@ switch ($_GET["op"])
 			echo '<option value=' . $reg['id_proveedor'] . '>' . $reg['nombre_proveedor']. " " . $reg['correo_electronico']. " " . '</option>';
 		}
 	break;	
-
+*/
 
 }
 
